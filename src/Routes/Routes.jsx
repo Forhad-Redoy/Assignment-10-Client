@@ -9,7 +9,6 @@ import SignUp from "../Pages/SignUp";
 import { RotateLoader } from "react-spinners";
 import ErrorPage from "../Pages/ErrorPage";
 
-
 import ForgerPassword from "../Pages/ForgerPassword";
 import AddCourseForm from "../Pages/AddCoursForm";
 import AllCourses from "../Pages/AllCourses";
@@ -35,48 +34,57 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-        loader:()=>fetch('http://localhost:3000/populer-courses')
+        loader: () =>
+          fetch("https://learneary-server.vercel.app/populer-courses"),
       },
       {
-        path:"/all-courses",
-        element:<AllCourses/>,
-        loader:()=>fetch('http://localhost:3000/courses')
-
+        path: "/all-courses",
+        element: <AllCourses />,
+        loader: () => fetch("https://learneary-server.vercel.app/courses"),
       },
       {
-        path:"/add-course",
-        element:(<PrivateRouter>
-          <AddCourseForm/>
-        </PrivateRouter>)
-      },
-      {
-        path:"/my-courses",
-        element:(<PrivateRouter>
-          <MyCourses/>
-        </PrivateRouter>)
-      },
-      {
-        path:"/my-enrolls",
-        element:(<PrivateRouter>
-          <MyEnrolls/>
-        </PrivateRouter>)
-      },
-      {
-        path:"/course-details/:id",
-        element:(
+        path: "/add-course",
+        element: (
           <PrivateRouter>
-            <CourseDetails/>
+            <AddCourseForm />
           </PrivateRouter>
         ),
-        loader:({params})=>fetch(`http://localhost:3000/courses/${params.id}`)
-      },{
-        path:"/update-course/:id",
-        element:(
+      },
+      {
+        path: "/my-courses",
+        element: (
           <PrivateRouter>
-            <UpdateCourse/>
+            <MyCourses />
           </PrivateRouter>
         ),
-         loader:({params})=>fetch(`http://localhost:3000/courses/${params.id}`)
+      },
+      {
+        path: "/my-enrolls",
+        element: (
+          <PrivateRouter>
+            <MyEnrolls />
+          </PrivateRouter>
+        ),
+      },
+      {
+        path: "/course-details/:id",
+        element: (
+          <PrivateRouter>
+            <CourseDetails />
+          </PrivateRouter>
+        ),
+        loader: ({ params }) =>
+          fetch(`https://learneary-server.vercel.app/courses/${params.id}`),
+      },
+      {
+        path: "/update-course/:id",
+        element: (
+          <PrivateRouter>
+            <UpdateCourse />
+          </PrivateRouter>
+        ),
+        loader: ({ params }) =>
+          fetch(`https://learneary-server.vercel.app/courses/${params.id}`),
       },
       {
         path: "/login",

@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import { useLoaderData } from "react-router";
 import CourseCard from "../Components/CourseCard";
 import MyContainer from "../Components/MyContainer";
 import Reveal from "../Components/Reveal";
 import useAxios from "../Hooks/useAxios";
+import { AuthContext } from "../Context/AuthContext";
+import Loadingspinner from "../Components/Loadingspinner";
 
 
 const AllCourses = () => {
   const loadedData = useLoaderData(); // all courses from loader
   const [courses, setCourses] = useState(loadedData);
+  const {loading,setLoading}=use(AuthContext)
   const [activeCategory, setActiveCategory] = useState("All");
   const axios=useAxios()
 
@@ -24,6 +27,7 @@ const AllCourses = () => {
       .get(`/courses/category/${category}`)
       .then((res) => {
         setCourses(res.data.result || res.data);
+        setLoading(false)
       })
       .catch((err) => {
         console.error("Error fetching category:", err);
@@ -38,6 +42,9 @@ const AllCourses = () => {
     "Marketing",
     "Art"
   ];
+   if (loading) {
+    return <Loadingspinner />;
+  }
 
   return (
     <MyContainer>
