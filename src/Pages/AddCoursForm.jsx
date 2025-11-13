@@ -117,7 +117,7 @@ const AddCourseForm = () => {
           <span>Mark as Featured</span>
         </div>
 
-        <button className="btn btn-primary w-full mt-4">Add Course</button>
+        <button className="my-btn">Add Course</button>
       </form>
     </div>
   );

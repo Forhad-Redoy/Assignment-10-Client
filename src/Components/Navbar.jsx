@@ -38,7 +38,7 @@ const Navbar = () => {
     setTheme(checked ? "dark": "light")
   }
     return (
-        <div className="py-2 navbar bg-base-100 shadow-sm">
+        <div className="py-2 navbar bg-base-100 shadow-sm bg-indigo-400">
       <MyContainer className="flex items-center justify-between">
         {/* Left side */}
         <div className="navbar-start">
@@ -77,9 +77,10 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <NavLink className=" text-xl font-semibold" to={"/"}>
+          <NavLink className=" text-xl font-semibold flex" to={"/"}>
+          <img src="https://learneasy.au/wp-content/uploads/2022/07/Rectangle.ai_.svg" alt="" className='w-15 h-10' />
           
-            Learn<span className=' text-purple-500'>Easy</span>
+            Learn<span className=' text-pink-500'>Easy</span>
           </NavLink>
         </div>
 
