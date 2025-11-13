@@ -24,7 +24,7 @@ const UpdateCourse = () => {
       .put(`/courses/${course._id}`, newCourse)
       .then((res) => {
         toast.success("Successfully Updated!");
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch((err) => {
         console.error(err);

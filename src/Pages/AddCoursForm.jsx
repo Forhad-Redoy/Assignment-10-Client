@@ -23,7 +23,7 @@ const AddCourseForm = () => {
       .post("/courses", newCourse)
       .then((res) => {
         toast.success("Successfully Added!");
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch((err) => {
         console.error("Error adding course:", err);

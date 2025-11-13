@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 
 const CourseDetails = () => {
   const data = useLoaderData();
-  console.log(data);
+  // console.log(data);
   const navigate = useNavigate();
   const course = data.result;
   const { user } = use(AuthContext);
