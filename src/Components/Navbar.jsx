@@ -130,10 +130,10 @@ const Navbar = () => {
               tabIndex="-1"
               className="menu  menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow"
             >
-              <div className=" pb-3 border-b border-b-gray-200">
+              {/* <div className=" pb-3 border-b border-b-gray-200">
                 <li className="text-sm font-bold">{user.displayName}</li>
                 <li className="text-xs">{user.email}</li>
-              </div>
+              </div> */}
               
               <li className="mt-1">
                 <Link to={"/dashboard"}>

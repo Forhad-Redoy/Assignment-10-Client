@@ -61,14 +61,10 @@ const router = createBrowserRouter([
           </PrivateRouter>
         ),
       },
-      
+
       {
         path: "/course-details/:id",
-        element: (
-          <PrivateRouter>
-            <CourseDetails />
-          </PrivateRouter>
-        ),
+        element: <CourseDetails />,
         loader: ({ params }) =>
           fetch(`https://learneary-server.vercel.app/courses/${params.id}`),
       },
@@ -109,12 +105,10 @@ const router = createBrowserRouter([
         <DashboardLayout />
       </PrivateRouter>
     ),
-    children:[
+    children: [
       {
-        index:true,
-        element:(
-          <Statistics/>
-        )
+        index: true,
+        element: <Statistics />,
       },
       {
         path: "my-enrolls",
@@ -125,12 +119,10 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path:"profile",
-        element:<Profile/>
-
+        path: "profile",
+        element: <Profile />,
       },
-
-    ]
+    ],
   },
 ]);
 

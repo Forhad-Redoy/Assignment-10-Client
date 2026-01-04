@@ -9,17 +9,17 @@ const Profile = () => {
   return (
     <div className='flex justify-center items-center h-screen'>
       <div className='bg-white shadow-lg rounded-2xl md:w-4/5 lg:w-3/5'>
-        <img
+        {/* <img
           alt='cover photo'
         //   src={coverImg}
           className='w-full mb-4 rounded-t-lg h-56'
-        />
+        /> */}
         <div className='flex flex-col items-center justify-center p-4 -mt-16'>
           <a href='#' className='relative block'>
             <img
               alt='profile'
               src={user?.photoURL}
-              className='mx-auto object-cover rounded-full h-24 w-24  border-2 border-white '
+              className='mx-auto object-cover rounded-full h-40 w-40  border-2 border-white '
             />
           </a>
 
@@ -42,14 +42,14 @@ const Profile = () => {
                 <span className='font-bold text-gray-600 '>{user?.email}</span>
               </p>
 
-              <div>
+              {/* <div>
                 <button className='bg-lime-500  px-10 py-1 rounded-lg text-white cursor-pointer hover:bg-lime-800 block mb-1'>
                   Update Profile
                 </button>
                 <button className='bg-lime-500 px-7 py-1 rounded-lg text-white cursor-pointer hover:bg-lime-800'>
                   Change Password
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
